@@ -1,0 +1,118 @@
+<Project>
+  <Name>BinarySearchTree</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Unbenannt</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>BinaryTree&lt;T&gt;</Name>
+        <Access>Public</Access>
+        <Location left="61" top="54" />
+        <Size width="320" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BinaryTree()</Member>
+        <Member type="Constructor">public BinaryTree(T pRoot)</Member>
+        <Member type="Method">public void TraversePreorder()</Member>
+        <Member type="Method">private void RekursivTraversePreorder(Node&lt;T&gt; pRoot)</Member>
+        <Member type="Method">public void TraverseInorder()</Member>
+        <Member type="Method">private void RekursivTraverseInorder(Node&lt;T&gt; pRoot)</Member>
+        <Member type="Method">public void TraversePostorder()</Member>
+        <Member type="Method">private void RekursivTraversePostorder(Node&lt;T&gt; pRoot)</Member>
+        <Member type="Method">protected Node&lt;T&gt; RekursivLeftmostNode(Node&lt;T&gt; pRoot)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Node&lt;T&gt;</Name>
+        <Access>Public</Access>
+        <Location left="692" top="54" />
+        <Size width="217" height="179" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Node&lt;T&gt; leftChild</Member>
+        <Member type="Field">Node&lt;T&gt; rightChild</Member>
+        <Member type="Property">public T Data { get; private set; }</Member>
+        <Member type="Property">public Node&lt;T&gt; LeftChild { get; set; }</Member>
+        <Member type="Property">public Node&lt;T&gt; RightChild { get; set; }</Member>
+        <Member type="Constructor">public Node(T pData)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BinarySearchTree&lt;T&gt;</Name>
+        <Access>Public</Access>
+        <Location left="61" top="440" />
+        <Size width="471" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public BinarySearchTree()</Member>
+        <Member type="Constructor">public BinarySearchTree(T pRoot)</Member>
+        <Member type="Method">public void Insert(T pData)</Member>
+        <Member type="Method">private void RekursivInsert(Node&lt;T&gt; pRoot, T pData)</Member>
+        <Member type="Method">public bool Search(T pData)</Member>
+        <Member type="Method">private bool RekursivSearch(Node&lt;T&gt; pRoot, T pData)</Member>
+        <Member type="Method">public bool Remove(T pData)</Member>
+        <Member type="Method">private bool RekursivRemove(Node&lt;T&gt; pRoot, ref Node&lt;T&gt; pParentsReference, T pData)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IComparable</Name>
+        <Access>Public</Access>
+        <Location left="791" top="440" />
+        <Size width="162" height="61" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Comment">
+        <Text>T muss IComparable implementieren </Text>
+        <Location left="582" top="414" />
+        <Size width="160" height="50" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndRole>+Root {get; protected set}</EndRole>
+        <EndMultiplicity>0..1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>992</X>
+          <Y>154</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>844</X>
+          <Y>278</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndRole>~rightChild</EndRole>
+        <EndMultiplicity>0..1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="1">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>991</X>
+          <Y>140</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>841</X>
+          <Y>10</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Composition</AssociationType>
+        <EndRole>~leftChild</EndRole>
+        <EndMultiplicity>0..1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="2" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
