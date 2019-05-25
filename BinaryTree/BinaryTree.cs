@@ -75,13 +75,13 @@ namespace DUABinaryTree
             Console.WriteLine(pRoot.Data);
         }
 
-        protected Node<T> RekursivLeftmostNode(Node<T> pRoot)
+        protected Node<T> RekursivLeftmostNode(Node<T> pRoot, ref Node<T> pParentNode)
         {
             if (pRoot.LeftChild == null)
             {
                 return pRoot;
             }
-            return RekursivLeftmostNode(pRoot.LeftChild);
+            return RekursivLeftmostNode(pRoot.LeftChild, ref pRoot);
         }
     }
 }

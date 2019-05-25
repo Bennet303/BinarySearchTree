@@ -8,7 +8,7 @@
         <Name>BinaryTree&lt;T&gt;</Name>
         <Access>Public</Access>
         <Location left="61" top="54" />
-        <Size width="320" height="230" />
+        <Size width="471" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public BinaryTree()</Member>
         <Member type="Constructor">public BinaryTree(T pRoot)</Member>
@@ -18,13 +18,13 @@
         <Member type="Method">private void RekursivTraverseInorder(Node&lt;T&gt; pRoot)</Member>
         <Member type="Method">public void TraversePostorder()</Member>
         <Member type="Method">private void RekursivTraversePostorder(Node&lt;T&gt; pRoot)</Member>
-        <Member type="Method">protected Node&lt;T&gt; RekursivLeftmostNode(Node&lt;T&gt; pRoot)</Member>
+        <Member type="Method">protected Node&lt;T&gt; RekursivLeftmostNode(Node&lt;T&gt; pRoot, ref Node&lt;T&gt; pParentNode)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Node&lt;T&gt;</Name>
         <Access>Public</Access>
-        <Location left="692" top="54" />
+        <Location left="791" top="54" />
         <Size width="217" height="179" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Node&lt;T&gt; leftChild</Member>
@@ -77,11 +77,11 @@
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>992</X>
+          <X>1091</X>
           <Y>154</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>844</X>
+          <X>943</X>
           <Y>278</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>
@@ -93,11 +93,11 @@
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>991</X>
+          <X>1090</X>
           <Y>140</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
-          <X>841</X>
+          <X>940</X>
           <Y>10</Y>
         </BendPoint>
         <Direction>Unidirectional</Direction>

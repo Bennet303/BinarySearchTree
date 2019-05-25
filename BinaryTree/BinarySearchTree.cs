@@ -137,8 +137,12 @@ namespace DUABinaryTree
                 // Wenn das zu löschende Element sowohl einen linken als auch einen rechten Nachfolger besitzt:
                 else
                 {
-                    // Finde das kleinste Element des rechten Teilbaums vom zu löschenden Element.
-                    Node<T> leftmostNodeOfRightTree = RekursivLeftmostNode(pRoot.RightChild);
+                    // Finde das kleinste Element und seinen Vater-Knoten im rechten Teilbaums des zu löschenden Elements.
+                    Node<T> parentOfLeftMostNode = pRoot;                    
+                    Node<T> leftmostNodeOfRightTree = RekursivLeftmostNode(pRoot.RightChild, ref pRoot);
+
+                    // Hänge den Rechten Teilbaum des kleinsten Elements an seinen Vater-Knoten.
+                    parentOfLeftMostNode.leftChild = leftmostNodeOfRightTree.RightChild;
 
                     // Ersetze den zu löschenden Knoten mit diesem kleinsten Element.
                     leftmostNodeOfRightTree.LeftChild = pRoot.LeftChild;
