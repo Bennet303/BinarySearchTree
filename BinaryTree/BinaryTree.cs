@@ -81,7 +81,8 @@ namespace DUABinaryTree
             {
                 return pRoot;
             }
-            return RekursivLeftmostNode(pRoot.LeftChild, ref pRoot);
+            pParentNode = pRoot;
+            return RekursivLeftmostNode(pRoot.LeftChild, ref pParentNode);
         }
     }
 }

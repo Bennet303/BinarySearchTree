@@ -8,7 +8,7 @@ namespace DUABinaryTree
         {
             BinarySearchTree<int> binärerSuchbaum = new BinarySearchTree<int>();
             int[] inhalt = new int[] { 12, 15, 11, 4, 7, 1, 8, 8, 20, 26 };
-            foreach(var i in inhalt)
+            foreach (var i in inhalt)
             {
                 binärerSuchbaum.Insert(i);
             }

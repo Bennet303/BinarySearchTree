@@ -116,11 +116,20 @@ namespace DUABinaryTree
             // Wenn das zu löschende Element pRoot entspricht:
             else if (pData.CompareTo(pRoot.Data) == 0)
             {
-                // Wenn das zu löschende Element keine Nachfolger hat:
-                if(pRoot.LeftChild == null && pRoot.RightChild == null)
+                // Wenn das zu löschende Element sowohl einen linken als auch einen rechten Nachfolger besitzt:
+                if (pRoot.LeftChild != null && pRoot.RightChild != null)
                 {
-                    // Entferne den Verweis auf das zu löschende Element in seinem Vater-Knoten. 
-                    pParentsReference = null;
+                    // Finde das kleinste Element und seinen Vater-Knoten im rechten Teilbaums des zu löschenden Elements.
+                    Node<T> parentOfLeftMostNode = pRoot;
+                    Node<T> leftmostNodeOfRightTree = RekursivLeftmostNode(pRoot.RightChild, ref parentOfLeftMostNode);
+
+                    // Hänge den Rechten Teilbaum des kleinsten Elements an seinen Vater-Knoten.
+                    parentOfLeftMostNode.leftChild = leftmostNodeOfRightTree.RightChild;
+
+                    // Ersetze den zu löschenden Knoten mit diesem kleinsten Element.
+                    leftmostNodeOfRightTree.LeftChild = pRoot.LeftChild;
+                    leftmostNodeOfRightTree.RightChild = pRoot.RightChild;
+                    pParentsReference = leftmostNodeOfRightTree;
                 }
                 // Wenn das zu löschende Element nur einen rechten Nachfolger hat:
                 else if(pRoot.RightChild != null)
@@ -134,20 +143,11 @@ namespace DUABinaryTree
                     // Ändere den Verweis auf das zu löschende Element in seinem Vater-Knoten auf den linken Nachfolger des zu löschenden Elements.
                     pParentsReference = pRoot.LeftChild;
                 }
-                // Wenn das zu löschende Element sowohl einen linken als auch einen rechten Nachfolger besitzt:
+                // Wenn das zu löschende Element keine Nachfolger hat:                
                 else
                 {
-                    // Finde das kleinste Element und seinen Vater-Knoten im rechten Teilbaums des zu löschenden Elements.
-                    Node<T> parentOfLeftMostNode = pRoot;                    
-                    Node<T> leftmostNodeOfRightTree = RekursivLeftmostNode(pRoot.RightChild, ref pRoot);
-
-                    // Hänge den Rechten Teilbaum des kleinsten Elements an seinen Vater-Knoten.
-                    parentOfLeftMostNode.leftChild = leftmostNodeOfRightTree.RightChild;
-
-                    // Ersetze den zu löschenden Knoten mit diesem kleinsten Element.
-                    leftmostNodeOfRightTree.LeftChild = pRoot.LeftChild;
-                    leftmostNodeOfRightTree.RightChild = pRoot.RightChild;
-                    pParentsReference = leftmostNodeOfRightTree;
+                    // Entferne den Verweis auf das zu löschende Element in seinem Vater-Knoten. 
+                    pParentsReference = null;                    
                 }
                 return true;
             }
