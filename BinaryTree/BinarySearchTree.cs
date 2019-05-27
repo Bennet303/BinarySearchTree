@@ -123,13 +123,24 @@ namespace DUABinaryTree
                     Node<T> parentOfLeftMostNode = pRoot;
                     Node<T> leftmostNodeOfRightTree = RekursivLeftmostNode(pRoot.RightChild, ref parentOfLeftMostNode);
 
-                    // Hänge den Rechten Teilbaum des kleinsten Elements an seinen Vater-Knoten.
-                    parentOfLeftMostNode.leftChild = leftmostNodeOfRightTree.RightChild;
+                    // Löscht das kleinste Element aus dem rechten Teilbaum.
+                    this.Remove(leftmostNodeOfRightTree.Data);
 
                     // Ersetze den zu löschenden Knoten mit diesem kleinsten Element.
                     leftmostNodeOfRightTree.LeftChild = pRoot.LeftChild;
                     leftmostNodeOfRightTree.RightChild = pRoot.RightChild;
-                    pParentsReference = leftmostNodeOfRightTree;
+
+                    // Wenn der zu löschende Knoten die Wurzel ist:
+                    if (pRoot == Root)
+                    {
+                        // Setzte außerdem den Root-Verweis auf das kleinste Element im rechten Teilbaum.
+                        Root = leftmostNodeOfRightTree;
+                    }
+                    else
+                    {
+                        // Sonst setzte den Verweis auf das zu löschende Element im Vater-Knoten auf das kleinste Element des rechten Teilbaums.
+                        pParentsReference = leftmostNodeOfRightTree;
+                    }
                 }
                 // Wenn das zu löschende Element nur einen rechten Nachfolger hat:
                 else if(pRoot.RightChild != null)
