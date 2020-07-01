@@ -1,4 +1,5 @@
-﻿# Ihr Thema: 	Binäre Bäume/Binärer Suchbaum
+![](https://github.com/Bennet303/BinarySearchTree/workflows/.NET%20Core/badge.svg)
+# Ihr Thema: 	Binäre Bäume/Binärer Suchbaum
 **Schwerpunkte**:	Grundbegriffe, Traversierung  
 **Anwendung**:	Implementation eines Binären (Such-)Baumes
 
