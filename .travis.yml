@@ -1,2 +1,13 @@
 language: csharp
 solution: BinaryTree.sln
+
+
+addons:
+  sonarcloud:
+    organization: "f8wc5bca"
+    token:
+      secure: "Mim7hhmLrHB5sPwYT5hnv5hv+TqwkftrT+ptruxkAoT/x1+TIwu4MLCHCIA10142nrHNqMrL842tXWZxufimQYnyPFWHHTF9itjn16ztIWmVIJIr0W92w8WfqOdGxszGRzql8cenV8w3/IwQ8BqLLcNpvj2jbK/lbCW+DJZQYdIgyS8df0vkAz8NCxZhseShzDgVuQ5is1eKus9Y4ABCauvi9edctfeMnNB80vbRx8BCYdiJLx2zmXgowpB2PIDQEFkDFMeX6JyCAtI1OxFXYnLuleIColjgZk0XG7bVgERhUQ/KAC53lT8OZ6pHxo5u9qUdS+zPn7V2gndUdZWstziuuIIXqSbjFOhWjsxvZ5LF3S3HznzbPrDWHf8AITQSTKEcHumXr933HuzzJEJpaH5J/aCbKutGJZF6WgBCQMMHrAADcOzuV6m8eQ4snPwuKBuj1tWTFmoVxfj5m5/K+QkvmRtVZWYb+YyTOU2tnJxnw31ejQg/SANAyORpC1GwEv8bK1pNq5i6aHJROZFwK1O2bDOOIkka/+WfJpmp6E7cqhY5HPBC6sxEDFpDtCA6e7MRpNE5CH8kq1rwHxrubxzhv2TKicnC3ggTrvOzH3Du846j77NPYnT3vZEGQ0W4O1RctlBvTVOrUj1SexnlEAsm8Gcs0uFnysEoVR44Z9Y=" # encrypted value of your token
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - sonar-scanner
