@@ -1,4 +1,7 @@
-![](https://github.com/Bennet303/BinarySearchTree/workflows/.NET%20Core/badge.svg)
+![](https://github.com/Bennet303/BinarySearchTree/workflows/.NET%20Core/badge.svg) 
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Bennet303_BinarySearchTree&metric=code_smells)](https://sonarcloud.io/dashboard?id=Bennet303_BinarySearchTree)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Bennet303_BinarySearchTree&metric=alert_status)](https://sonarcloud.io/dashboard?id=Bennet303_BinarySearchTree)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Bennet303_BinarySearchTree&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Bennet303_BinarySearchTree)
 # Ihr Thema: 	Binäre Bäume/Binärer Suchbaum
 **Schwerpunkte**:	Grundbegriffe, Traversierung  
 **Anwendung**:	Implementation eines Binären (Such-)Baumes
