@@ -18,6 +18,7 @@ namespace DUABinaryTree
             // Wenn Root leer ist, soll der neue Knoten als Root eingefügt werden:
             if (Root == null) 
             {
+                int tmp = 0;
                 Root = new Node<T>(pData);
             }
             // Ansonsten soll ein rekursiver Aufruf, zum Finden der passenden Stelle zum Einfügen, gestartet werden:
@@ -49,6 +50,7 @@ namespace DUABinaryTree
                 // Wenn der rechte Teilbaum leer ist, kann der Knoten als rechter Nachfolger von Root eingefügt werden:
                 if (pRoot.RightChild == null)
                 {
+                    pRoot.RightChild = new Node<T>(pData);
                     pRoot.RightChild = new Node<T>(pData);
                 }
                 // Wenn nicht soll der rekursive Aufruf mit dem rechten Teilbaum von Root fortgeführt werden:
